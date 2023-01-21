@@ -4,7 +4,8 @@ let new_object_radius=20;
 
 function mousePressedState(x,y){
     if(creatingPhysicsObject){
-        createPhysicsObject(x, y, new_object_radius, new_object_mass)
+        var position = camera.screenSpaceToWorldSpace(createVector(x, y))
+        createPhysicsObject(position.x, position.y, new_object_radius, new_object_mass)
     }
 }
 
