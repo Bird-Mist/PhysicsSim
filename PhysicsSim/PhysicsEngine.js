@@ -17,8 +17,10 @@ class PhysicsObj{
         this.pos.add(p5.Vector.mult(this.velocity, (dt /  50.0) * SimulationSpeed))
     }
     
-    draw(){
-        circle(this.pos.x, this.pos.y, this.radius)
+    draw(translated_pos){
+        circle(translated_pos.x, translated_pos.y, this.radius)
+        var test = p5.Vector.mult(p5.Vector.normalize(this.acceleration), 20)
+        line(translated_pos.x, translated_pos.y, translated_pos.x + test.x, translated_pos.y + test.y)
     }
 
     gravity(physicsObjsList, dt){
@@ -34,9 +36,6 @@ class PhysicsObj{
             force = (GravitationalConstant * physicsObj.mass) / sq(distance.mag())
         }
         distance.setMag(force)
-        var test = p5.Vector.mult(p5.Vector.normalize(distance), 20)
-        line(this.pos.x, this.pos.y, this.pos.x + test.x, this.pos.y + test.y)
-        this.printVector(distance, "Acceleration")
         this.acceleration.add(distance);
     }
     distance(physicsObj){
