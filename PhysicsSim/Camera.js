@@ -1,6 +1,8 @@
 class Camera{
     constructor(x, y, screen_width, screen_height){
         this.pos = createVector(x, y)
+        this.scale = 1;
+        this.scroll_speed = 0.001;
         this.screen = createVector(screen_width/2, screen_height/2)
     }
 
@@ -10,12 +12,12 @@ class Camera{
             var physicsObj = physicsObjectList[i]
             physicsObj.update(physicsObjectList, dt)
             var translated_coords = this.translate(physicsObj.pos)
-            physicsObj.draw(translated_coords)
+            physicsObj.draw(translated_coords, this.scale)
         }
     }
 
     translate(position){
-        var output = p5.Vector.add(this.pos, p5.Vector.add(this.screen, position))
+        var output = p5.Vector.add(p5.Vector.mult(this.pos,this.scale), p5.Vector.add(this.screen, position).mult(this.scale))
         return output;
     }
 
@@ -33,5 +35,9 @@ class Camera{
         if(inputs['w'] == true){
             this.pos.y += speed
         }
+    }
+
+    mouseEvent(event){
+        this.scale -= event.delta*this.scroll_speed;
     }
 }

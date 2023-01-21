@@ -17,9 +17,9 @@ class PhysicsObj{
         this.pos.add(p5.Vector.mult(this.velocity, (dt /  50.0) * SimulationSpeed))
     }
     
-    draw(translated_pos){
-        circle(translated_pos.x, translated_pos.y, this.radius)
-        var test = p5.Vector.mult(p5.Vector.normalize(this.acceleration), 20)
+    draw(translated_pos,scale){
+        circle(translated_pos.x, translated_pos.y, this.radius*scale)
+        var test = p5.Vector.mult(p5.Vector.normalize(this.acceleration), 20*scale)
         line(translated_pos.x, translated_pos.y, translated_pos.x + test.x, translated_pos.y + test.y)
     }
 
