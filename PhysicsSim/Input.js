@@ -6,6 +6,11 @@ function keyReleased(){
     inputs[key] = false;
 }
 
+function mousePressed(){
+    var vector = camera.screenSpaceToWorldSpace(createVector(mouseX, mouseY))
+    console.log("WorldPos", ": ", vector.x , ", ", vector.y)
+}
+
 function mouseWheel(event){
     camera.mouseEvent(event)
 }

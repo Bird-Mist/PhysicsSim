@@ -21,6 +21,13 @@ class Camera{
         return output;
     }
 
+    screenSpaceToWorldSpace(position){
+        var output = p5.Vector.sub(this.screen, position);
+        output.add(this.pos)
+        output.mult(this.scale)
+        return output;
+    }
+
     move(){
         var speed = 5;
         if(inputs['a'] == true){

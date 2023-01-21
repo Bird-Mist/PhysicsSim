@@ -1,5 +1,4 @@
 var physicsObjectList=[]
-var physicsObj
 var camera
 
 function setup() {
