@@ -23,6 +23,14 @@ function draw() {
 }
 
 function mousePressed(){
-  mousePressedState(mouseX, mouseY)
+  var position = camera.screenSpaceToWorldSpace(createVector(mouseX, mouseY))
+  mousePressedGui(mouseX, mouseY, position.x, position.y)
+  //mousePressedState(mouseX, mouseY)
+
+  for(var i = 0; i < physicsObjectList.length; i++){
+    var physicsObj = physicsObjectList[i];
+    physicsObj.mousePressed(position.x, position.y)
+  }
+
 }
 

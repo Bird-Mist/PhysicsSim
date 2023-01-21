@@ -49,3 +49,9 @@ function draw_gui(){
     text('number of object:'+physicsObjectList.length, 400, 50)
     pop();
 }
+
+function mousePressedGui(realX, realY, worldX, worldY){
+    if(!toggle_create_physics_object_Button._checkHit(realX, realY)){
+        mousePressedState(worldX, worldY)
+    }
+}
