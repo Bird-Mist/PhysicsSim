@@ -22,9 +22,9 @@ class Camera{
     }
 
     screenSpaceToWorldSpace(position){
-        var output = p5.Vector.sub(this.screen, position);
-        output.add(this.pos)
-        output.mult(this.scale)
+        var output = p5.Vector.mult(position, 1/this.scale)
+        output.sub(this.pos)
+        output.sub(this.screen)
         return output;
     }
 
