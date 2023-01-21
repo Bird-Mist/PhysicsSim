@@ -1,4 +1,5 @@
-GravitationalConstant = 15;
+var GravitationalConstant = 15;
+var SimulationSpeed = 0.1;
 
 class PhysicsObj{
     constructor(x, y, radius, mass){
@@ -9,24 +10,24 @@ class PhysicsObj{
         this.mass= mass
     }
 
-    update(physicsObjList){
+    update(physicsObjList, dt){
         this.acceleration = createVector(0,0)
-        this.gravity(physicsObjectList)
+        this.gravity(physicsObjectList, dt)
         this.velocity.add(this.acceleration)
-        this.pos.add(this.velocity)
+        this.pos.add(p5.Vector.mult(this.velocity, (dt /  50.0) * SimulationSpeed))
     }
     
     draw(){
         circle(this.pos.x, this.pos.y, this.radius)
     }
 
-    gravity(physicsObjsList){
+    gravity(physicsObjsList, dt){
         for(var i = 0; i<physicsObjsList.length;i++){
-            this.gravitationalForce(physicsObjsList[i])
+            this.gravitationalForce(physicsObjsList[i], dt)
         }
     }
 
-    gravitationalForce(physicsObj){
+    gravitationalForce(physicsObj, dt){
         var distance = this.distance(physicsObj)
         var force = 0
         if(distance.mag() >= 10){
