@@ -11,7 +11,7 @@ function setup_gui(){
 
     slider_simulation_speed= createSlider("Simulation speed", 500, 50, 300, 32, simulation_speed_min, simulation_speed_max)
     toggle_create_physics_object_Button= createCheckbox("Create new object", 550, 120, 40, 40);
-    joystick_velocity= createJoystick("Joystick velocity", 650, 450, 150, 150, -5, 5, 5, -5);
+    joystick_velocity= createJoystick("Joystick velocity", 650, 450, 150, 150, -1, 1, 1, -1);
 
 }
 

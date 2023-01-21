@@ -56,10 +56,8 @@ class PhysicsObj{
     mousePressed(x,y){
         let distance=this.pos.copy();
         distance.sub(x,y);
-        console.log(distance.mag()*camera.scale)
         if(distance.mag() <= this.radius){
             selected_physics_object= this.id;
-            console.log('id:', this.id)
         }
     }
 }
