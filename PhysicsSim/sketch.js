@@ -19,7 +19,7 @@ function setup() {
 function draw() {
   // put drawing code here
   background(255)
-  draw_gui()
   camera.draw_and_update(physicsObjectList, deltaTime);
+  draw_gui()
 }
 
