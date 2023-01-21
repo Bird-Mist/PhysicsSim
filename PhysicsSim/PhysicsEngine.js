@@ -17,8 +17,8 @@ class PhysicsObj{
         this.pos.add(p5.Vector.mult(this.velocity, (dt /  50.0) * SimulationSpeed))
     }
     
-    draw(){
-        circle(this.pos.x, this.pos.y, this.radius)
+    draw(translated_pos){
+        circle(translated_pos.x, translated_pos.y, this.radius)
     }
 
     gravity(physicsObjsList, dt){
