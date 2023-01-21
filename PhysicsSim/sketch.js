@@ -23,3 +23,7 @@ function draw() {
   draw_gui()
 }
 
+function mousePressed(){
+  mousePressedState(mouseX, mouseY)
+}
+
