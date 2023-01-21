@@ -3,6 +3,7 @@ var SimulationSpeed = 0.1;
 
 class PhysicsObj{
     constructor(x, y, radius, mass){
+        this.id= physicsObjectList.length
         this.pos = createVector(x, y)
         this.velocity = createVector(random(2), 0)
         this.acceleration = createVector(0, 0)

@@ -8,10 +8,10 @@ function setup() {
   setup_gui()
   camera = new Camera(0, 0, width, height);
 
-  physicsObjectList.push(new PhysicsObj(0, 0, 20, 5))
-  physicsObjectList.push(new PhysicsObj(200,100, 20, 5))
-  physicsObjectList.push(new PhysicsObj(-100,20, 20, 5))
-  physicsObjectList.push(new PhysicsObj(100,200, 20, 5))
+  //physicsObjectList.push(new PhysicsObj(0, 0, 20, 5))
+  //physicsObjectList.push(new PhysicsObj(200,100, 20, 5))
+  //physicsObjectList.push(new PhysicsObj(-100,20, 20, 5))
+  //physicsObjectList.push(new PhysicsObj(100,200, 20, 5))
   
 }
 
